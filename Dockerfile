@@ -1,18 +1,20 @@
 # DOCKER-VERSION 1.8.2
 
 #
-# React Native Webpack Starter Kit
+# React Native Webpack Starter Kit Dockerfile
+#
 # https://github.com/jhabdas/react-native-webpack-starter-kit
 #
 # Demonstrates use of Starter Kit in a virtualized Linux development environment.
 # Helps enable React Native development for Windows. OS X workflows also possible.
+#
 
 # Pull base image
 FROM node:argon
 
 # Set environment variables
 ENV NODE_ENV development
-ENV KIT_VERS v2.25.1
+ENV KIT_VERS v2.24.0
 ENV WATCHMAN_VERS v4.5.0
 
 # Fetch and install

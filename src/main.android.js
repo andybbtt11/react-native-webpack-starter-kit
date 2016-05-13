@@ -3,7 +3,7 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import { AppRegistry } from 'react-native'
-import App from './components/App'
+import App from './components/Main/App'
 
 class Root extends App {
   static defaultProps = {
