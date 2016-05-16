@@ -1,28 +1,21 @@
-/**
- * React Native Webpack Starter Kit
- * https://github.com/jhabdas/react-native-webpack-starter-kit
- */
-import React from 'react-native'
-import MediaListView from '../components/MediaListView'
-import GlobalStyle from '../styles/GlobalStyle'
+import React, { Component } from 'react-native'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 
-const {
-  NavigatorIOS,
-  AlertIOS,
-} = React
+import * as reducers from '../reducers'
+import CounterApp from './counter'
 
-const App = () =>
-  <NavigatorIOS
-    barTintColor="#702779"
-    initialRoute={{
-      component: MediaListView,
-      onRightButtonPress: () => AlertIOS.alert('Search', 'You pressed the button'),
-      rightButtonTitle: 'Search',
-      title: 'Stop & Shop',
-    }}
-    style={GlobalStyle.mainContainer}
-    tintColor="#FFF"
-    titleTextColor="#FFF"
-  />
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+const reducer = combineReducers(reducers)
+const store = createStoreWithMiddleware(reducer)
 
-export default App
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <CounterApp />
+      </Provider>
+    )
+  }
+}
