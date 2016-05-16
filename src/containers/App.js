@@ -3,8 +3,8 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import React from 'react-native'
-import WebView from './WebView'
-import GlobalStyle from '../../styles/GlobalStyle'
+import MediaListView from '../components/MediaListView'
+import GlobalStyle from '../styles/GlobalStyle'
 
 const {
   NavigatorIOS,
@@ -13,16 +13,16 @@ const {
 
 const App = () =>
   <NavigatorIOS
-    barTintColor="#2A3744"
+    barTintColor="#702779"
     initialRoute={{
-      component: WebView,
+      component: MediaListView,
       onRightButtonPress: () => AlertIOS.alert('Search', 'You pressed the button'),
       rightButtonTitle: 'Search',
       title: 'Stop & Shop',
     }}
     style={GlobalStyle.mainContainer}
-    tintColor="#EFEFEF"
-    titleTextColor="#EFEFEF"
+    tintColor="#FFF"
+    titleTextColor="#FFF"
   />
 
 export default App

@@ -1,5 +1,5 @@
 import React from 'react-native'
-import ListViewStyle from '../../styles/ListView'
+import ListViewStyle from '../styles/ListView'
 
 const {
   View,

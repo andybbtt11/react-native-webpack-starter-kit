@@ -10,6 +10,9 @@ export default StyleSheet.create({
   content: {
     backgroundColor: '#CCC',
     flex: 1,
+    height: 50,
+    width: 50,
+    marginTop: 200,
   },
   webView: {
     marginTop: 34,
