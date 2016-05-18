@@ -1,21 +1,30 @@
-import React, { Component } from 'react-native'
-import { createStore, applyMiddleware, combineReducers } from 'redux'
-import { Provider } from 'react-redux'
-import thunk from 'redux-thunk'
+import React, { Component } from 'react-native';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import promise from 'redux-promise';
+import createLogger from 'redux-logger';
 
-import * as reducers from '../reducers'
-import CounterApp from './counter'
+import * as reducers from '../reducers';
+import BannerApp from './BannerApp';
 
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
-const reducer = combineReducers(reducers)
-const store = createStoreWithMiddleware(reducer)
+const reducer = combineReducers(reducers);
+const logger = createLogger();
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk, promise, logger)
+);
 
 export default class App extends Component {
   render() {
+    const { state, actions } = this.props;
     return (
       <Provider store={store}>
-        <CounterApp />
+        <BannerApp
+          user={state}
+          {...actions}
+        />
       </Provider>
-    )
+    );
   }
 }
