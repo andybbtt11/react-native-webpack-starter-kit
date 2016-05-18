@@ -1,9 +1,7 @@
 import React, {
   Component,
   View,
-  Text,
-  TouchableOpacity,
-  AlertIOS
+  Text
 } from 'react-native';
 
 export default class Entry extends Component {
@@ -11,16 +9,12 @@ export default class Entry extends Component {
     super(props);
   }
 
-  showAlert() {
-    AlertIOS.alert('props', this.props);
-  }
-
   render() {
+    const { user } = this.props;
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
-        <TouchableOpacity onPress={this.showAlert} >
-          <Text>Click</Text>
-        </TouchableOpacity>
+        <Text>Name: {user.name}</Text>
+        <Text>Age: {user.age}</Text>
       </View>
     );
   }

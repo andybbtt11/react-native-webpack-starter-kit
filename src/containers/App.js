@@ -17,13 +17,9 @@ const store = createStore(
 
 export default class App extends Component {
   render() {
-    const { state, actions } = this.props;
     return (
       <Provider store={store}>
-        <BannerApp
-          user={state}
-          {...actions}
-        />
+        <BannerApp/>
       </Provider>
     );
   }
