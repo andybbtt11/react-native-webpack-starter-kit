@@ -10,11 +10,13 @@ export default class Entry extends Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { OPCO_PROPERTIES } = this.props;
     return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
-        <Text>Name: {user.name}</Text>
-        <Text>Age: {user.age}</Text>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>OPCO: {OPCO_PROPERTIES.opco}</Text>
+        <Text>OPCO DISPLAY: {OPCO_PROPERTIES.display}</Text>
+        <Text>OPCO ALT: {OPCO_PROPERTIES.alt}</Text>
+        <Text>OPCO CARD: {OPCO_PROPERTIES.card_display}</Text>
       </View>
     );
   }

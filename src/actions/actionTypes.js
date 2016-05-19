@@ -1,1 +1,1 @@
-export const OFFERS = 'OFFERS';
+export const USER = 'USER';

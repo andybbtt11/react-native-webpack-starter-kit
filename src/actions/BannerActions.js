@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
 
-export function offers() {
+export function user() {
   return {
-    type: types.OFFERS
+    type: types.USER
   };
 }

@@ -13,17 +13,23 @@ class BannerApp extends Component {
     const { state, actions } = this.props;
     return (
       <Entry
-        user={state.user}
+        OPCO_PROPERTIES={state.OPCO_PROPERTIES}
         {...actions}
       />
     );
   }
 }
 
-export default connect(state => ({
+function bindState(state) {
+  return {
     state: state.user
-  }),
-  (dispatch) => ({
+  };
+}
+
+function bindActions(dispatch) {
+  return {
     actions: bindActionCreators(BannerActions, dispatch)
-  })
-)(BannerApp);
+  };
+}
+
+export default connect(bindState, bindActions)(BannerApp);

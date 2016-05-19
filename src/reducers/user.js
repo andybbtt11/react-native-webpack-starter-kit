@@ -1,11 +1,7 @@
 import * as types from '../actions/actionTypes';
+import {OPCO_PROPERTIES} from '../config/opcos/stsh';
 
-const initialState = {
-  user: {
-    name: 'Butch',
-    age: 36
-  }
-};
+const initialState = {OPCO_PROPERTIES};
 
 export default function user(state = initialState, action = {}) {
   switch(action.type) {
